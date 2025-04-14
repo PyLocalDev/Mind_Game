@@ -1,8 +1,11 @@
 #include <iostream>
+#include <strings.h>
+#include <cstdlib>
 
 class Game {
   public:
     void menu() {
+        system("clear");
       for(int i = -1; i != 0; i--) {
         std::cout << std::endl;
         std::cout << "MIND GAME!   Made by PyLocalDev!" << std::endl;
@@ -21,18 +24,44 @@ class Game {
             break;
 
           case 'd':
-            std::cout << "difficultity" << std::endl;
+            this -> diff();
             break;
 
           case 'e':
-            std::cout << "Exit" << std::endl;
+            this -> close();
             break;
 
           default:
-            std::cout << "please the option given above." << std::endl;
+            system("clear");
+            std::cout << "please choose the option given above." << std::endl;
             break;
         }
       }
+    }
+
+    int diff() {
+      system("clear");
+      char opt;
+      std::cout << "Choose difficultity" << std::endl;
+      std::cout << "  1) Easy" << std::endl << "  2) Medium" << std::endl << "  3) Hard" << std::endl << "  e) Back" << std::endl;
+      std::cout << "Please Choose any option :";
+      std::cin >> opt;
+
+      switch(opt) {
+        case 'e':
+          this -> menu();
+          break;
+
+        default:
+          std::cout << "Other options will be added soon.";
+          break;
+      }
+
+      return 0;
+    }
+
+    void close() {
+      exit(0);
     }
 };
 
