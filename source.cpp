@@ -1,6 +1,10 @@
 #include <iostream>
+#include <unistd.h>
 #include <strings.h>
 #include <cstdlib>
+
+//Global Variables
+char diff_val;
 
 class Game {
   public:
@@ -20,7 +24,7 @@ class Game {
 
         switch(opt) {
           case 's':
-            std::cout << "start" << std::endl;
+            this -> start(diff_val);
             break;
 
           case 'd':
@@ -39,23 +43,99 @@ class Game {
       }
     }
 
-    int diff() {
+    void start(char d) {
       system("clear");
-      char opt;
-      std::cout << "Choose difficultity" << std::endl;
-      std::cout << "  1) Easy" << std::endl << "  2) Medium" << std::endl << "  3) Hard" << std::endl << "  e) Back" << std::endl;
-      std::cout << "Please Choose any option :";
-      std::cin >> opt;
+      std::cout << "Your difficultity :";
+      char confi;
+      
+      switch(d) {
+        case '1':
+          std::cout << "easy" << std::endl;
+          break;
 
-      switch(opt) {
-        case 'e':
-          this -> menu();
+        case '2':
+          std::cout << "Midium" << std::endl;
+          break;
+
+        case '3':
+          std::cout << "Hard" << std::endl;
           break;
 
         default:
-          std::cout << "Other options will be added soon.";
+          std::cout << "Unknown" << std::endl;
           break;
       }
+
+      std::cout << "Do you want to continue with this difficultity? type [Y,N] and press enter:";
+      std::cin >> confi;
+
+      if(confi == 'n' || confi == 'N') {
+        this -> menu();
+      }
+
+      switch (d) {
+        case '1':
+            std::cout << "The easy quesions." << std::endl;
+            sleep(1);
+            system("clear");
+            break;
+
+        case '2':
+            std::cout << "Kinda Hard questions." << std::endl;
+            sleep(1);
+            system("clear");
+
+            break;
+
+        case '3':
+            std::cout << "The Final Boss." << std::endl;
+            sleep(1);
+            system("clear");
+
+            break;
+
+        default:
+          break;
+      }
+      
+    }
+
+    int diff() {
+      system("clear");
+      for(int i = 1; i != 0; i++) {
+        char opt;
+        std::cout << "Choose difficultity" << std::endl;
+        std::cout << "  1) Easy" << std::endl << "  2) Medium" << std::endl << "  3) Hard" << std::endl << "  e) Back" << std::endl;
+        std::cout << "Please Choose any option :";
+        std::cin >> opt;
+
+        switch(opt) {
+          case 'e':
+            this -> menu();
+            break;
+
+          case '1':
+            diff_val = '1';
+            this -> menu();
+            break;
+
+          case '2':
+            diff_val = '2';
+            this -> menu();
+            break;
+
+          case '3':
+            diff_val = '3';
+            this -> menu();
+            break;
+
+          default:
+            std::cout << "Please select an option." << std::endl;
+            system("clear");
+            break;
+        }
+      }
+      
 
       return 0;
     }
