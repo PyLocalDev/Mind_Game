@@ -1,0 +1,15 @@
+~$estions .docx
+cource.cpp
+Questions .docx
+garbage.py
+source
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+build/Debug/cource.o
+build/Debug/outDebug
+build/Debug/source.o
+build/Release/cource.o
+build/Release/source.o
+build/Release/outRelease

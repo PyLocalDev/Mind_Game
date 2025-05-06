@@ -82,14 +82,14 @@ class Main { // Main structure
             break;
 
         case '2':
-            std::cout << "Kinda Hard questions." << std::endl;
+            this -> medium();
             sleep(1);
             system("clear");
 
             break;
 
         case '3':
-            std::cout << "The Final Boss." << std::endl;
+            this -> hard();
             sleep(1);
             system("clear");
 
@@ -259,6 +259,7 @@ class Main { // Main structure
       std::cout << "3) What is the hardest natural substance on earth?" << std::endl;
       std::string quest3;
       std::cin >> quest3;
+      std::cin.ignore();
 
       if(quest3 == "Diamond" || quest3 == "diamond") {
         std::cout << "It's Correct!" << std::endl;
@@ -284,7 +285,7 @@ class Main { // Main structure
 
       std::cout << "Who composed the Symphony No.9 (Ode To Joy)?" << std::endl;
       std::string quest5;
-      std::cin >> quest5;
+      std::getline(std::cin, quest5);
 
       if(quest5 == "Ludwig Van Beethoven" || quest5 == "ludwig van beethoven") {
         std::cout << "It's Correct" << std::endl;
@@ -301,6 +302,10 @@ class Main { // Main structure
 
       std::cout << "Press Enter to continue..."; std::cin.ignore();
 
+    }
+
+    static void hard() {
+      std::cout << "This difficulty will be added in next commit." << std::endl;
     }
 
     void close() {
