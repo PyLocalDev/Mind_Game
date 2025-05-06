@@ -305,7 +305,53 @@ class Main { // Main structure
     }
 
     static void hard() {
-      std::cout << "This difficulty will be added in next commit." << std::endl;
+      int correct = 0;
+      int wrong = 0;
+
+      std::cout << "1) What is the term for the study of the origin and history of words?" << std::endl;
+      std::string quest1;
+      std::getline(std::cin, quest1);
+
+      if(quest1 == "etymology" || quest1 == "Etymology") {
+        std::cout << "It's Correct!" << std::endl;
+        correct++;
+      }
+      else {
+        std::cout << "It's Wrong" << std::endl;
+        wrong++;
+      }
+
+      std::cout << "2) Which 13-Century Venetian explorer documented his traves across Asia in the travels of Marco Polo?" << std::endl;
+      std::string quest2;
+      std::getline(std::cin, quest2);
+
+      if(quest2 == "Marco Polo" || quest2 == "marco polo") {
+        std::cout << "It's correct!" << std::endl;
+        correct++;
+      }
+      else {
+        std::cout << "It's Wrong!" << std::endl;
+        wrong++;
+      }
+
+      std::cout << "3) What is the name of the galaxy our solor system belong to?" << std::endl;
+      std::string quest3;
+      std::getline(std::cin, quest3);
+
+      if(quest3 == "Milky Way" || quest3 == "milky way") {
+        std::cout << "It's Correct" << std::endl;
+        correct++;
+      }
+      else {
+        wrong++;
+      }
+
+      std::cout << "------QUESTIONS ENDED------" << std::endl;
+      std::cout << "Guested Correct: " << correct << std::endl;
+      std::cout << "Guested Wrong: " << wrong << std::endl;
+
+      std::cout << "Press Enter to continue..."; std::cin.ignore();
+
     }
 
     void close() {
